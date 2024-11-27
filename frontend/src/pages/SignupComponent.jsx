@@ -1,8 +1,8 @@
 import { useSignup } from "./useSignup";
 
 const SignupComponent = ({ setIsAuthenticated }) => {
-  
-  const { email, password, setEmail, setPassword, handleSignup } = useSignup({ setIsAuthenticated });
+
+  const { email, password, password2, setEmail, setPassword, setPassword2, handleSignup } = useSignup({ setIsAuthenticated });
 
   return (
     <div className="form-container">
@@ -22,6 +22,14 @@ const SignupComponent = ({ setIsAuthenticated }) => {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+        />
+      </label>
+      <label>
+        Confirm Password:
+        <input
+          type="password"
+          value={password2}
+          onChange={(e) => setPassword2(e.target.value)}
         />
       </label>
       <br />
