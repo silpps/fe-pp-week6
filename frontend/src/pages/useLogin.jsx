@@ -23,10 +23,10 @@ const useLogin = (setIsAuthenticated) => {
 
       if (response.ok) {
         const user = await response.json();
-        localStorage.setItem("user", JSON.stringify(user));
-        console.log("User logged in successfully!");
+        sessionStorage.setItem("user", JSON.stringify(user));
+        console.log("User logged in successfully");
         setIsAuthenticated(true);
-        navigate("/"); // Navigate after login
+        navigate("/");
       } else {
         const errorData = await response.json();
         setError(errorData.message || "Login failed");
